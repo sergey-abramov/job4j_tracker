@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Matches {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Игра 11.");
+        System.out.println("Игра 11");
         boolean turn = true;
         int count = 11;
         while (count > 0) {
