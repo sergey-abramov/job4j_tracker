@@ -7,7 +7,7 @@ public class Bus implements Transport {
     }
 
     @Override
-    public int passengers(int passengers) {
+    public int passenger(int passengers) {
         return passengers;
     }
 
@@ -16,3 +16,4 @@ public class Bus implements Transport {
         return gas / price;
     }
 }
+
