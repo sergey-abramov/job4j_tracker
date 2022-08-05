@@ -1,18 +1,18 @@
 ﻿package ru.job4j.poly;
 
-public class Bus extends Transport {
+public class Bus implements Transport {
     @Override
-    boolean drive() {
+    public boolean drive() {
         return false;
     }
 
     @Override
-    int passengers(int passengers) {
+    public int passengers(int passengers) {
         return passengers;
     }
 
     @Override
-    int gas(int gas, int price) {
+    public int gas(int gas, int price) {
         return gas / price;
     }
 }

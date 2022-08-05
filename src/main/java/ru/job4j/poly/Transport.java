@@ -1,9 +1,9 @@
 ﻿package ru.job4j.poly;
 
-public abstract class Transport {
-    abstract boolean drive();
+public interface Transport {
+     boolean drive();
 
-    abstract int passengers(int passengers);
+     int passengers(int passengers);
 
-    abstract int gas(int gas, int price);
+     int gas(int gas, int price);
 }
