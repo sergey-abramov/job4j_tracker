@@ -1,18 +1,21 @@
-﻿package ru.job4j.poly;
+package ru.job4j.poly;
 
 public class Bus implements Transport{
     @Override
-    public boolean run() {
-        return false;
+    public String run() {
+        return "Поехали";
     }
 
     @Override
     public int passengers(int passengers) {
-        return 0;
+        for (int i = 0; i < 30; i++) {
+            passengers += i;
+        }
+        return passengers;
     }
 
     @Override
-    public int gas(int gas, int price) {
-        return 0;
+    public int gas(int fuel, int price) {
+        return fuel / price;
     }
 }
