@@ -8,7 +8,7 @@ public class College {
         student.setName("Петров Иван Николаевич");
         student.setGroup("Водные пути");
         student.setCreated(new Date());
-
-        System.out.println(student.getName() + " group : " + student.getGroup() + " date : " + student.getCreated());
+        System.out.println(student.getName() + " group : "
+                + student.getGroup() + " date : " + student.getCreated());
     }
 }

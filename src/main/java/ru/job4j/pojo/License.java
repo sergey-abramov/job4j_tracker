@@ -7,6 +7,7 @@ public class License {
     private String owner;
     private String model;
     private String code;
+    private Date created;
 
     @Override
     public boolean equals(Object o) {
@@ -25,8 +26,6 @@ public class License {
     public int hashCode() {
         return Objects.hash(owner, model, code, created);
     }
-
-    private Date created;
 
     public String getOwner() {
         return owner;
