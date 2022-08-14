@@ -8,6 +8,7 @@ public class StartUI {
         tracker.add(item);
         System.out.println("Добавленная заявка: " + item);
     }
+
     public static void showAllItems(Input input, Tracker tracker) {
         System.out.println("=== Show all items ===");
         Item[] items = tracker.findAll();
