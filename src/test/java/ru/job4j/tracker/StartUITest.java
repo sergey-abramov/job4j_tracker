@@ -107,7 +107,7 @@ class StartUITest {
         Item one = tracker.add(new Item("item1"));
         Item two = tracker.add(new Item("item2"));
         Input in = new StubInput(
-                new String[] {"0", one.getName(), "1"}
+                new String[] {"0", two.getName(), "1"}
         );
         UserAction[] actions = {
                 new FindByNameAction(out),
@@ -120,7 +120,7 @@ class StartUITest {
                         + "0. Find items by name" + ln
                         + "1. Exit" + ln
                         + "=== Find items by name ===" + ln
-                        + one + ln
+                        + two + ln
                         + "Menu:" + ln
                         + "0. Find items by name" + ln
                         + "1. Exit" + ln
