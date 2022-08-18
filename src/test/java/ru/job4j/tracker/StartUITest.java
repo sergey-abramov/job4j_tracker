@@ -10,22 +10,13 @@ class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "Item name", "1"}
         );
-        Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(out),
                 new ExitAction()
         };
+        Tracker tracker = new Tracker();
         new StartUI(out).init(in, tracker, actions);
-        String ln = System.lineSeparator();
-        assertThat(out.toString()).isEqualTo(
-                "Menu:" + ln
-                        + "0. Add new Item" + ln
-                        + "1. Exit" + ln
-                        + "=== Create a new Item ===" + ln
-                        + "Menu:" + ln
-                        + "0. Add new Item" + ln
-                        + "1. Exit" + ln
-        );
+        assertThat(tracker.findAll()[0].getName()).isEqualTo("Item name");
     }
 
     @Test
@@ -116,7 +107,7 @@ class StartUITest {
         Item one = tracker.add(new Item("item1"));
         Item two = tracker.add(new Item("item2"));
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getName()), "1"}
+                new String[] {"0", one.getName(), "1"}
         );
         UserAction[] actions = {
                 new FindByNameAction(out),
