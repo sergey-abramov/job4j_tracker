@@ -9,10 +9,9 @@ public class FindEl {
                 break;
             }
         }
-        if (rsl == - 1) {
+        if (rsl == -1) {
                 throw new ElementNotFoundException("Element not found.");
             }
-
         return rsl;
     }
 
