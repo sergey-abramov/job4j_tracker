@@ -23,10 +23,10 @@ class StartUITest {
     public void whenReplaceItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        Item one = tracker.add(new Item("Replaced item"));
+        Item two = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), replacedName, "1"}
+                new String[] {"0", String.valueOf(two.getId()), replacedName, "1"}
         );
         UserAction[] actions = {
                 new EditAction(out),
