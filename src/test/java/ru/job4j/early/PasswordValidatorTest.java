@@ -22,7 +22,7 @@ class PasswordValidatorTest {
                 () -> {
                     PasswordValidator.validate(password);
                 });
-        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ"
+        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ "
                 + "в верхнем регистре");
     }
 
