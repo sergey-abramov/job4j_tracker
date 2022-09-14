@@ -16,7 +16,6 @@ public class UniqueText {
             break;
         }
 
-
         return rsl;
     }
 }
