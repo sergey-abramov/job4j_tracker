@@ -45,7 +45,6 @@ public class StartUI {
                 new DeleteAction(output),
                 new ExitAction());
 
-
         new StartUI(output).init(input, tracker, actions);
     }
 }
