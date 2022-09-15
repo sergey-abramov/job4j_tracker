@@ -13,7 +13,9 @@ public class UniqueText {
         }
         for (String dublicate : text) {
             rsl = check.contains(dublicate);
+            if (!rsl) {
             break;
+            }
         }
 
         return rsl;
