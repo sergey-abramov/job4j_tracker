@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Comparator;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class JobTest {
 
@@ -17,7 +16,7 @@ class JobTest {
                 new Job("Impl task", 0),
                 new Job("Impl task", 5)
         );
-        assertEquals(rsl, 1);
+        assertThat(rsl).isLessThan(2);
     }
 
     @Test
@@ -28,7 +27,7 @@ class JobTest {
                 new Job("Impl task", 0),
                 new Job("Impl task", 7)
         );
-        assertEquals(rsl, -1);
+        assertThat(rsl).isLessThan(0);
     }
 
     @Test
@@ -38,7 +37,7 @@ class JobTest {
         Job jobTwo = new Job("OneTwo", 7);
         int rsl = cmpName.compare(jobOne, jobTwo);
 
-        assertEquals(rsl, -1);
+        assertThat(rsl).isLessThan(0);
     }
 
     @Test
@@ -58,7 +57,7 @@ class JobTest {
                 new Job("Impl task", 0),
                 new Job("test one", 3)
         );
-        assertEquals(rsl, 1);
+        assertThat(rsl).isLessThan(2);
     }
 
     @Test
@@ -68,6 +67,6 @@ class JobTest {
                 new Job("Impl task", 0),
                 new Job("test one", 3)
         );
-        assertEquals(rsl, 1);
+        assertThat(rsl).isLessThan(2);
     }
 }
