@@ -20,10 +20,10 @@ class StringCompareTest {
     public void whenLeftLessThanRightResultShouldBeNegative() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
-                "Ivanov",
-                "Ivanova"
+                "Ivanova",
+                "Ivanov"
         );
-        assertThat(rst).isEqualTo(0);
+        assertThat(rst).isGreaterThan(0);
     }
 
     @Test
