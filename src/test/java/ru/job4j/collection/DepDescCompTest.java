@@ -22,7 +22,7 @@ class DepDescCompTest {
                 "K2",
                 "K2/SK1"
         );
-        assertThat(rsl).isEqualTo(0);
+        assertThat(rsl).isLessThan(0);
     }
 
     @Test
