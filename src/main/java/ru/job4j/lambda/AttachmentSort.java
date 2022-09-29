@@ -22,7 +22,7 @@ public class AttachmentSort {
         Comparator<Attachment> compName = new Comparator<Attachment>() {
             @Override
             public int compare(Attachment o1, Attachment o2) {
-                return String.CASE_INSENSITIVE_ORDER.compare(o1.getName(), o2.getName());
+                return o1.getName().compareTo(o2.getName());
             }
         };
         attachments.sort(compName);
