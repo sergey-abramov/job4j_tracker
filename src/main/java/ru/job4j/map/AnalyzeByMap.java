@@ -8,7 +8,7 @@ public class AnalyzeByMap {
         double num = 0.0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                sum += subject.score();
+                sum += subject.getScore();
                 num++;
             }
         }
@@ -20,7 +20,7 @@ public class AnalyzeByMap {
         for (Pupil pupilList : pupils) {
             double sum = 0.0;
             for (Subject subject : pupilList.subjects()) {
-                sum += subject.score();
+                sum += subject.getScore();
             }
             pupil.add(new Label(pupilList.name(), sum / pupilList.subjects().size()));
         }
@@ -32,8 +32,7 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupilList : pupils) {
             for (Subject subject : pupilList.subjects()) {
-                map.merge(subject.name(), subject.score(), (oldScore, newScore)
-                        -> oldScore + newScore);
+                map.merge(subject.getName(), subject.getScore(), Integer::sum);
             }
         }
         for (String subject : map.keySet()) {
@@ -47,7 +46,7 @@ public class AnalyzeByMap {
         for (Pupil pupilList : pupils) {
             double sum = 0.0;
             for (Subject subject : pupilList.subjects()) {
-                sum += subject.score();
+                sum += subject.getScore();
             }
             pupil.add(new Label(pupilList.name(), sum));
         }
@@ -60,8 +59,7 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupilList : pupils) {
             for (Subject subject : pupilList.subjects()) {
-                map.merge(subject.name(), subject.score(), (oldScore, newScore)
-                        -> oldScore + newScore);
+                map.merge(subject.getName(), subject.getScore(), Integer::sum);
             }
         }
         for (String subject : map.keySet()) {
