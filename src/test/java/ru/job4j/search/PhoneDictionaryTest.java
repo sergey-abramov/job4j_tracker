@@ -14,10 +14,10 @@ public class PhoneDictionaryTest {
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
-        var persons = phones.find("Petr");
+        var persons1 = phones.find("Petr");
         var findPerson = new ArrayList<>();
-        findPerson.addAll(persons);
-        assertThat(persons).isEqualTo(findPerson);
+        findPerson.addAll(persons1);
+        assertThat(persons1).isEqualTo(findPerson);
     }
 
     @Test

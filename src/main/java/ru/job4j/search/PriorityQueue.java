@@ -7,8 +7,8 @@ public class PriorityQueue {
 
     public void put(Task task) {
         var index = 0;
-        for (var element : tasks) {
-           if (element.getPriority() > task.getPriority()) {
+        for (var element1 : tasks) {
+           if (element1.getPriority() > task.getPriority()) {
                break;
            }
            index++;

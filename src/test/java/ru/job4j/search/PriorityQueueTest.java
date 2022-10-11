@@ -8,11 +8,11 @@ class PriorityQueueTest {
 
     @Test
     public void whenHigherPrioritySecond() {
-        var queue = new PriorityQueue();
-        queue.put(new Task("low", 5));
-        queue.put(new Task("urgent", 1));
-        queue.put(new Task("middle", 3));
-        var result = queue.take();
+        var queue1 = new PriorityQueue();
+        queue1.put(new Task("low", 5));
+        queue1.put(new Task("urgent", 1));
+        queue1.put(new Task("middle", 3));
+        var result = queue1.take();
         assertThat(result.getDesc()).isEqualTo("urgent");
     }
 
