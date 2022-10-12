@@ -13,9 +13,9 @@ public class College {
 
     public Optional<Student> findByAccount(String account) {
         Optional<Student> rsl = Optional.empty();
-        for (var s1: students.keySet()) {
-            if (account.equals(s1.getAccount())) {
-                rsl = Optional.of(s1);
+        for (Student s: students.keySet()) {
+            if (account.equals(s.getAccount())) {
+                rsl = Optional.of(s);
                 break;
             }
         }
@@ -27,7 +27,7 @@ public class College {
         Optional<Student> s = findByAccount(account);
         if (s.isPresent()) {
             Set<Subject> subjects = students.get(s.get());
-            for (var subj : subjects) {
+            for (Subject subj : subjects) {
                 if (name.equals(subj.getName())) {
                     rsl = Optional.of(subj);
                     break;
