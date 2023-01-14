@@ -46,7 +46,8 @@ public class SqlTracker implements Store {
 
     @Override
     public Item add(Item item) {
-        try (PreparedStatement ps = cn.prepareStatement("inert into items(name, created) values (?, ?)")) {
+        try (PreparedStatement ps = cn.prepareStatement("inert into items(name, created) "
+                + "values (?, ?)")) {
             ps.setString(1, item.getName());
             ps.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
             ps.execute();
@@ -59,7 +60,8 @@ public class SqlTracker implements Store {
     @Override
     public boolean replace(int id, Item item) {
         boolean rsl = false;
-        try (PreparedStatement ps = cn.prepareStatement("update items set name = ?, created = ? where id = ?")) {
+        try (PreparedStatement ps = cn.prepareStatement("update items set name = ?,"
+                + " created = ? where id = ?")) {
             ps.setString(1, item.getName());
             ps.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
             ps.setInt(3, id);
@@ -88,7 +90,7 @@ public class SqlTracker implements Store {
     public List<Item> findAll() {
         List<Item> rsl = new ArrayList<>();
         try (PreparedStatement ps = cn.prepareStatement("select * from items")) {
-            ResultSet rslset= ps.executeQuery();
+            ResultSet rslset = ps.executeQuery();
             while (rslset.next()) {
                 rsl.add(new Item(
                         rslset.getString("name"),
@@ -106,7 +108,7 @@ public class SqlTracker implements Store {
         List<Item> rsl = new ArrayList<>();
         try (PreparedStatement ps = cn.prepareStatement("select * from items where name = ?")) {
             ps.setString(1, key);
-            ResultSet rslset= ps.executeQuery();
+            ResultSet rslset = ps.executeQuery();
             while (rslset.next()) {
                 rsl.add(new Item(
                         rslset.getString("name"),
@@ -124,7 +126,7 @@ public class SqlTracker implements Store {
         Item rsl = new Item();
         try (PreparedStatement ps = cn.prepareStatement("select * from items where id = ?")) {
             ps.setInt(1, id);
-            ResultSet rslset= ps.executeQuery();
+            ResultSet rslset = ps.executeQuery();
             while (rslset.next()) {
                 rsl = new Item(
                         rslset.getString("name"),
