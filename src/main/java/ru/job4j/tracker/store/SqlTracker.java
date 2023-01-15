@@ -38,7 +38,7 @@ public class SqlTracker implements Store {
         }
     }
 
-    public static Item set(ResultSet resultSet) throws Exception{
+    public static Item set(ResultSet resultSet) throws Exception {
         return new Item(resultSet.getString("name"),
                 resultSet.getInt("id"));
     }
