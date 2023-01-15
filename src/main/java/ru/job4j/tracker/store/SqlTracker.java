@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Properties;
 
 public class SqlTracker implements Store {
@@ -87,7 +86,7 @@ public class SqlTracker implements Store {
     public boolean delete(int id) {
         boolean rsl = false;
         try (PreparedStatement ps = cn.prepareStatement("delete from items where id = ?")) {
-            ps.setInt(3, id);
+            ps.setInt(1, id);
             rsl = ps.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();
@@ -132,6 +131,8 @@ public class SqlTracker implements Store {
             ResultSet rslset = ps.executeQuery();
             if (rslset.next()) {
                 rsl = set(rslset);
+            } else {
+                rsl = null;
             }
         } catch (Exception e) {
             e.printStackTrace();
